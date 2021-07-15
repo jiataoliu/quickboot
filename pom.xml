@@ -11,6 +11,8 @@
 
     <modules>
         <module>springboot-study-helloworld</module>
+        <module>springboot-study-helloworld-service</module>
+        <module>springboot-study-multienv</module>
     </modules>
 
 </project>

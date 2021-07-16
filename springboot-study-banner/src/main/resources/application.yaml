@@ -1,0 +1,6 @@
+server:
+  port: 9000
+##关闭Banner，可选值CONSOLE、LOG、OFF
+#spring:
+#  main:
+#    banner-mode: off

@@ -13,6 +13,7 @@
         <module>springboot-study-helloworld</module>
         <module>springboot-study-helloworld-service</module>
         <module>springboot-study-multienv</module>
+        <module>springboot-study-banner</module>
     </modules>
 
 </project>

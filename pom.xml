@@ -17,6 +17,7 @@
         <module>springboot-study-restful</module>
         <module>springboot-study-resttest</module>
         <module>springboot-study-swagger2</module>
+        <module>springboot-study-log</module>
     </modules>
 
 </project>

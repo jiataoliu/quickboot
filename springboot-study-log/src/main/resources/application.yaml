@@ -1,0 +1,16 @@
+server:
+  port: 9000
+
+logging:
+  #扩展的日志配置文件，扩展 xml 配置大于 yaml 配置
+  config: classpath:logback-spring.xml
+  #level 日志等级 指定命名空间的日志输出
+  level:
+    com.ittao.log: info
+  #file 指定输出文件的存储路径
+  file:
+    name: logs/logback_ittao/app.log
+  #pattern 指定输出场景的日志输出格式
+  pattern:
+    console: "%d %-5level %logger : %msg%n"
+    file: "%d %-5level [%thread] %logger : %msg%n"

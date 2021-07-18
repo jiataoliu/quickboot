@@ -88,6 +88,7 @@ public class UserController {
     /**
      * 新增一个用户对象
      * 非幂等
+     * 返回 201 HttpStatus.CREATED 对创建新资源的 POST 操作进行响应。应该带着指向新资源地址的 Location 头
      */
     @PostMapping("/users")
     @ResponseStatus(HttpStatus.CREATED)
@@ -101,6 +102,7 @@ public class UserController {
     /**
      * 编辑一个用户对象
      * 幂等性
+     * 返回 201 HttpStatus.CREATED 对创建新资源的 POST 操作进行响应。应该带着指向新资源地址的 Location 头
      */
     @PutMapping("/users/{id}")
     @ResponseStatus(HttpStatus.CREATED)
@@ -120,13 +122,13 @@ public class UserController {
     /**
      * 删除一个用户对象
      * 幂等性
+     * 返回 HttpStatus.NO_CONTENT 表示无返回内容
      */
     @DeleteMapping("/users/{id}")
-//    @ResponseStatus(HttpStatus.NO_CONTENT)
-    @ResponseStatus(HttpStatus.OK)
-    public Object deleteUser(@PathVariable("id") String id) {
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deleteUser(@PathVariable("id") String id) {
         if (null == id) {
-            return null;
+            return;
         }
 
         List<User> list = getData();
@@ -143,7 +145,5 @@ public class UserController {
                 break;
             }
         }
-
-        return user;
     }
 }

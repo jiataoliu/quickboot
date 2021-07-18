@@ -14,6 +14,8 @@
         <module>springboot-study-helloworld-service</module>
         <module>springboot-study-multienv</module>
         <module>springboot-study-banner</module>
+        <module>springboot-study-restful</module>
+        <module>springboot-study-resttest</module>
     </modules>
 
 </project>

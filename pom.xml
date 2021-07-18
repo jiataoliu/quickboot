@@ -16,6 +16,7 @@
         <module>springboot-study-banner</module>
         <module>springboot-study-restful</module>
         <module>springboot-study-resttest</module>
+        <module>springboot-study-swagger2</module>
     </modules>
 
 </project>

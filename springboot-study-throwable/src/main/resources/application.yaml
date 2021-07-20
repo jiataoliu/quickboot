@@ -1,0 +1,11 @@
+server:
+  port: 9000
+# html 应用的访问文件
+spring:
+  mvc:
+    view:
+      suffix: .html
+  # 应用的访问路径
+  web:
+    resources:
+      static-locations: classpath:/templates/

@@ -1,0 +1,7 @@
+server:
+  port: 9000
+# 大于 0 启动初始化 DispatcherServlet
+spring:
+  mvc:
+    servlet:
+      load-on-startup: 100

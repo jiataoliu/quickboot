@@ -1,0 +1,18 @@
+server:
+  port: 9000
+# freemarker 配置
+spring:
+  freemarker:
+    request-context-attribute: req
+    # freemarker 后缀
+    suffix: .ftl
+    # freemarker 文件类型
+    content-type: text/html
+    cache: false
+    # freemarker 所在路径
+    template-loader-path: classpath:/templates/
+    # freemarker 编码格式
+    charset: UTF-8
+    check-template-location: true
+    expose-request-attributes: false
+    expose-session-attributes: false

@@ -20,6 +20,7 @@
         <module>springboot-study-log</module>
         <module>springboot-study-throwable</module>
         <module>springboot-study-aoplog</module>
+        <module>springboot-study-thymeleaf</module>
     </modules>
 
 </project>

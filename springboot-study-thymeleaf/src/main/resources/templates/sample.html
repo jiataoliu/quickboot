@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Thymeleaf 简单示例</title>
+</head>
+<body>
+<p style="background-color: #c7ddef">
+    ${...} 可以显示后台传输的变量
+</p>
+<p th:text="${user.username}"></p>
+
+<p style="background-color: #c7ddef">
+    th:each 循环标签
+</p>
+<p th:each="object : ${users}">
+    <span th:text="${object.username}"></span>
+    <span th:text="${object.sex}"></span>
+</p>
+</body>
+</html>

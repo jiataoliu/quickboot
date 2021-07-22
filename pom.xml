@@ -22,6 +22,7 @@
         <module>springboot-study-aoplog</module>
         <module>springboot-study-thymeleaf</module>
         <module>springboot-study-freemarker</module>
+        <module>springboot-study-jdbc</module>
     </modules>
 
 </project>

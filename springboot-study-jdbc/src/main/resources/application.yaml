@@ -1,0 +1,9 @@
+server:
+  port: 9000
+# DataSource Config
+spring:
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/springboot_study?useSSL=false&useUnicode=true&characterEncoding=utf8
+    username: root
+    password: 123456

@@ -2,6 +2,7 @@ package com.ittao.mybatis.controller;
 
 import com.ittao.mybatis.domain.TestMybatis;
 import com.ittao.mybatis.service.TestMybatisService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -18,7 +19,7 @@ public class TestMybatisController {
     /**
      * 服务对象
      */
-    @Resource
+    @Autowired
     private TestMybatisService testMybatisService;
 
     /**

@@ -24,6 +24,7 @@
         <module>springboot-study-freemarker</module>
         <module>springboot-study-jdbc</module>
         <module>springboot-study-mybatis</module>
+        <module>springboot-study-jpa</module>
     </modules>
 
 </project>

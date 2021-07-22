@@ -1,0 +1,31 @@
+server:
+  port: 9000
+
+# http://localhost:9000/h2-console
+# DataSource Config
+spring:
+  datasource:
+    driver-class-name: org.h2.Driver
+    schema: classpath:db/schema-h2.sql
+    data: classpath:db/data-h2.sql
+    url: jdbc:h2:mem:springboot_study
+    username: sa
+    password: 123456
+  h2:
+    console:
+      # 网页访问的默认路径
+      path: /h2-console
+      # 打开网页访问，默认为 false
+      enabled: true
+      # 允许远程访问
+      settings:
+        web-allow-others: true
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        show_sql: true
+        use_sql_comments: true
+        format_sql: true

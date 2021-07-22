@@ -23,6 +23,7 @@
         <module>springboot-study-thymeleaf</module>
         <module>springboot-study-freemarker</module>
         <module>springboot-study-jdbc</module>
+        <module>springboot-study-mybatis</module>
     </modules>
 
 </project>

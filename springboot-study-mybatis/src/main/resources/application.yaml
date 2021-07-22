@@ -1,0 +1,50 @@
+# 设置端口号
+server:
+  port: 9000
+## mysql 配置
+#spring:
+#  datasource:
+#    driverClassName: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://localhost:3306/demo_test?useSSL=false&useUnicode=true&characterEncoding=utf8
+#    username: root
+#    password: 123456
+
+#  h2数据库使用jdbc
+#
+#  配置信息, spring.datasource.url=jdbc:h2:file:./db/test
+#  a.H2的数据库可以使用文件数据库，也可以使用内存数据库 jdbc:h2:<mem|file|tcp>:<{dmame}|{dbFilePath}>
+#  i.内存数据库:jdbc:h2:mem:DBName
+#  内存数据库的数据存在内存中．所以当程序停止的时候，会自动停止．数据不会被保存.
+#  ii.文件数据库.jdbc:h2:file:{FilePath}
+#  1、FilePath的表达形式为
+#  a)./{path}/{fileName}，会在当前程序的根目录下创建目录和数据库文件
+#  b)~/{path}/{fileName}，会在当前用户的根目录下创建目录和数据库文件
+#  c)c:/{path}/{fileName}，会在指定的盘符的指定文件夹下创建数据库文件
+#  2、file为默认的，可以不写，例如jdbc:h2:~/test
+#  iii.远程数据库.jdbc:h2:tcp://<{IP|hostname}>[:{Port}]/[ {Path}]<{dbName}>
+
+# http://localhost:9000/h2-console
+# DataSource Config
+spring:
+  datasource:
+    driver-class-name: org.h2.Driver
+    schema: classpath:db/schema-h2.sql
+    data: classpath:db/data-h2.sql
+    url: jdbc:h2:mem:springboot_study
+    username: sa
+    password: 123456
+  h2:
+    console:
+      # 网页访问的默认路径
+      path: /h2-console
+      # 打开网页访问，默认为 false
+      enabled: true
+      # 允许远程访问
+      settings:
+        web-allow-others: true
+# mybatis 配置
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+  mapper-locations: mapper/**/*Mapper.xml
+  type-aliases-package: com.ittao.**.domain

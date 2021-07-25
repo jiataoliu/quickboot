@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!--<html lang="en">-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+
+<h1>Index</h1>
+<a href="/user/logout">退出用户</a>
+<ul>
+    <!-- admin角色的用户能同时拥有用户管理和订单管理的权限，user角色的用户只拥有订单管理的权限 -->
+    <shiro:hasRole name="sys">
+        <li>
+            <a href="">超级管理员可见</a>
+        </li>
+    </shiro:hasRole>
+
+    <shiro:hasAnyRoles name="sys,admin">
+        <li>
+            <a href="">普通管理员可见</a>
+        </li>
+    </shiro:hasAnyRoles>
+
+    <!-- admin角色的用户对订单有增删改查的权限，user角色的用户只能查看订单 -->
+    <shiro:hasAnyRoles name="sys,admin,user">
+        <li>
+            <a href="">订单管理</a>
+            <ul>
+                <shiro:hasPermission name="order:add:*">
+                    <li><a href="">新增</a></li>
+                </shiro:hasPermission>
+                <shiro:hasPermission name="order:del:*">
+                    <li><a href="">删除</a></li>
+                </shiro:hasPermission>
+                <shiro:hasPermission name="order:upd:*">
+                    <li><a href="">修改</a></li>
+                </shiro:hasPermission>
+                <shiro:hasPermission name="order:find:*">
+                    <li><a href="">查询</a></li>
+                </shiro:hasPermission>
+
+            </ul>
+        </li>
+    </shiro:hasAnyRoles>
+</ul>
+</body>
+</html>

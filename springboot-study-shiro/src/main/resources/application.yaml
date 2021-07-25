@@ -1,0 +1,81 @@
+server:
+  port: 9000
+
+spring:
+  main:
+    allow-bean-definition-overriding: true # \u5F53\u9047\u5230\u540C\u6837\u540D\u5B57\u7684\u65F6\u5019\uFF0C\u662F\u5426\u5141\u8BB8\u8986\u76D6\u6CE8\u518C
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML5
+    encoding: UTF-8
+    servlet:
+      content-type: text/html
+    cache: false
+#  mvc:
+#    # \u914D\u7F6E\u9759\u6001\u8D44\u6E90\u6620\u5C04\u8DEF\u5F84\uFF0C/public\u3001/resources\u8DEF\u5F84\u5931\u6548
+#    static-path-pattern: classpath:/templates/**
+#    view:
+#      suffix: .html
+#  freemarker:
+#    suffix: .html
+#    cache: false
+#    charset: UTF-8
+#    check-template-location: true
+#    content-type: text/html; charset=utf-8
+#    expose-request-attributes: true
+#    expose-session-attributes: true
+#    request-context-attribute: request
+#    template-loader-path: classpath:/templates/
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/springboot_study?useSSL=false&useUnicode=true&characterEncoding=utf8
+      username: root
+      password: 123456
+      initial-size: 10
+      max-active: 100
+      min-idle: 10
+      max-wait: 60000
+      pool-prepared-statements: true
+      max-pool-prepared-statement-per-connection-size: 20
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      # Oracle\u9700\u8981\u6253\u5F00\u6CE8\u91CA
+      # validation-query: SELECT 1 FROM DUAL
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      stat-view-servlet:
+        enabled: true
+        url-pattern: /druid/*
+        login-username: admin
+        login-password: admin
+      filter:
+        stat:
+          log-slow-sql: true
+          slow-sql-millis: 1000
+          merge-sql: false
+        wall:
+          config:
+            multi-statement-allow: true
+
+mybatis-plus:
+  mapper-locations: classpath:/mapper/*/*Mapper.xml
+  typeAliasesPackage: com.ittao.shiro.domain
+  global-config:
+    refresh-mapper: true
+    refresh: false
+    db-config:
+      id-type: AUTO
+      field-strategy: NOT_NULL
+      column-underline: true
+      logic-delete-value: 0
+      logic-not-delete-value: 1
+    banner: false
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+    call-setters-on-nulls: true
+    jdbc-type-for-null: 'null'

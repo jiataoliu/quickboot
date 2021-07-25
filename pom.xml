@@ -27,6 +27,7 @@
         <module>springboot-study-jpa</module>
         <module>springboot-study-mybatisplus</module>
         <module>springboot-study-dynamicdb</module>
+        <module>springboot-study-shiro</module>
     </modules>
 
 </project>
